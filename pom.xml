@@ -15,11 +15,11 @@
             <!--<version>2.12.8</version>-->
         <!--</dependency>-->
 
-        <dependency>
-            <groupId>com.jzfq.product</groupId>
-            <artifactId>product-commons</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.jzfq.product</groupId>-->
+            <!--<artifactId>product-commons</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <distributionManagement>
