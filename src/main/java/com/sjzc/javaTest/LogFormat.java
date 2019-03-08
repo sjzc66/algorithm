@@ -46,12 +46,12 @@ public class LogFormat {
 
             if (index >= texts.length) {
                 StringBuffer[] tempText = texts;
-                texts = new StringBuffer[texts.length * 2];
+                texts = new StringBuffer[texts.length << 1];
                 for (int j = 0; j < tempText.length; j++) {
                     texts[j] = tempText[j];
                 }
                 int[] tempOffSets = offsets;
-                offsets = new int[offsets.length * 2];
+                offsets = new int[offsets.length << 1];
                 for (int j = 0; j < tempOffSets.length; j++) {
                     offsets[j] = tempOffSets[j];
                 }
