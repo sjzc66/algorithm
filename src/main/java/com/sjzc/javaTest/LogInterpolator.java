@@ -12,9 +12,8 @@ import java.util.regex.Pattern;
 public class LogInterpolator {
 
     public static void main(String[] args) {
-//        LogInterpolator.interpolate2("用户支付失败,交易号:{2},用户:{0},失败原因:{1}","1234567890","xxxx异常",111);
-        LogInterpolator.interpolate3("a{0}c{1}e","b","d");
-
+        LogInterpolator.interpolate3("用户支付失败,交易号:{2},用户:{0},失败原因:{1}","1234567890","xxxx异常",111);
+        LogInterpolator.interpolate4("用户支付失败,交易号:{2},用户:{0},失败原因:{1}","1234567890","xxxx异常",111);
     }
 
     public static String interpolate0(String text,String ...strings) {
@@ -40,13 +39,24 @@ public class LogInterpolator {
     }
 
     public static String interpolate3(String text, Object... args) {
-        StringFUtil stringFUtil = new StringFUtil(text);
+        LogFormat logFormat = new LogFormat(text);
         long st = System.currentTimeMillis();
-        for (int i = 0; i < 10000000; i++) {
-            String rtn = stringFUtil.format(args);
-        }
+        //for (int i = 0; i < 10000000; i++) {
+            String rtn = logFormat.format(args);
+        //}
+        System.out.println(rtn);
         long et = System.currentTimeMillis();
-        System.out.println( et - st);
+        System.out.println("char数组执行时间："+ (et - st));
+        return null;
+    }
+
+    public static String interpolate4(String text, Object... args) {
+        long st = System.currentTimeMillis();
+        //for (int i = 0; i < 10000000; i++) {
+            String rtn = MessageFormat.format(text, args);
+        //}
+        long et = System.currentTimeMillis();
+        System.out.println("MessaeFormat执行时间："+ (et - st));
         return null;
     }
 

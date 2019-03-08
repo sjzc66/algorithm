@@ -1,5 +1,8 @@
 package com.sjzc.javaTest;
 
+/**
+ * logFormat的演变过程
+ */
 public class StringFUtil {
 
     private String text;
