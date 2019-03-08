@@ -5,11 +5,11 @@ package com.sjzc.javaTest;
  */
 public class LogFormat {
 
-    private int InitSize = 10;
+    private int INIT_SIZE = 2 << 3;
 
-    private StringBuffer[] texts = new StringBuffer[InitSize];
+    private StringBuffer[] texts = new StringBuffer[INIT_SIZE];
 
-    private int[] offsets = new int[InitSize];
+    private int[] offsets = new int[INIT_SIZE];
 
     public static void main(String[] args) {
         LogInterpolator.interpolate3("{0}cd{1}f", "b", "e");
@@ -45,8 +45,16 @@ public class LogFormat {
             }
 
             if (index >= texts.length) {
+                StringBuffer[] tempText = texts;
                 texts = new StringBuffer[texts.length * 2];
+                for (int j = 0; j < tempText.length; j++) {
+                    texts[j] = tempText[j];
+                }
+                int[] tempOffSets = offsets;
                 offsets = new int[offsets.length * 2];
+                for (int j = 0; j < tempOffSets.length; j++) {
+                    offsets[j] = tempOffSets[j];
+                }
             }
         }
     }
