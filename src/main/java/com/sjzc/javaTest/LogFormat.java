@@ -59,7 +59,11 @@ public class LogFormat {
                     sb.append(texts[i]);
                 }
                 if (offsets[i] == 2) {
-                    sb.append(args[Integer.parseInt(String.valueOf(texts[i]))]);
+                    if (Integer.parseInt(String.valueOf(texts[i])) < args.length) {
+                        sb.append(args[Integer.parseInt(String.valueOf(texts[i]))]);
+                    } else {
+                        sb.append("{").append(Integer.parseInt(String.valueOf(texts[i]))).append("}");
+                    }
                 }
             }
         }

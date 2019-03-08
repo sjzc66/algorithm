@@ -1,8 +1,6 @@
 package com.sjzc.javaTest;
 
 import java.text.MessageFormat;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author mina
@@ -12,60 +10,70 @@ import java.util.regex.Pattern;
 public class LogInterpolator {
 
     public static void main(String[] args) {
-        LogInterpolator.interpolate3("用户支付失败,交易号:{2},用户:{0},失败原因:{1}","1234567890","xxxx异常",111);
-        LogInterpolator.interpolate4("用户支付失败,交易号:{2},用户:{0},失败原因:{1}","1234567890","xxxx异常",111);
+        long st = System.currentTimeMillis();
+        String string = LogInterpolator.interpolate3("用户支付失败,交易号:{2},用户:{0},失败原因:{1}", "1234\"哈\"567890", "xxxx异常", 111, 222);
+        System.out.println(string);
+        long et = System.currentTimeMillis();
+
+        System.out.println("数组实现单个执行时间："+ (et - st));
+
+        st = System.currentTimeMillis();
+        string = LogInterpolator.interpolate4("用户支付失败,交易号:{2},用户:{0},失败原因:{1}", "1234567890", "xxxx异常", 111, 222);
+        System.out.println(string);
+        et = System.currentTimeMillis();
+
+        System.out.println("MessageFormat实现单个执行时间："+ (et - st));
+
+        System.out.println("=====================对比测试===========================");
+
+        st = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            LogInterpolator.interpolate3("用户支付失败,交易号:{2},用户:{0},失败原因:{1}", "1234567890", "xxxx异常", 111, 222);
+        }
+        et = System.currentTimeMillis();
+
+        System.out.println("数组实现100000个执行时间："+ (et - st));
+
+        st = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            LogInterpolator.interpolate4("用户支付失败,交易号:{2},用户:{0},失败原因:{1}", "1234567890", "xxxx异常", 111, 222);
+        }
+        et = System.currentTimeMillis();
+
+        System.out.println("MessageFormat实现100000个执行时间："+ (et - st));
     }
 
-    public static String interpolate0(String text,String ...strings) {
+    //**replace实现**//
+    public static String interpolate1(String text,String ...strings) {
         for (int i = 0; i < strings.length; i++) {
             text = text.replace("{" + i + "}", strings[i]);
         }
-        System.out.println(text);
-        return text;
+        String rtn = String.format(text, strings);
+        System.out.println(rtn);
+        return rtn;
     }
 
-    public static String interpolate1(String text,Object ...strings) {
+    //**replace实现**//
+    public static String interpolate2(String text,Object ...strings) {
         for (int i = 0; i < strings.length; i++) {
             text = text.replace("{" + i + "}", strings[i].toString());
         }
-        System.out.println(text);
-        return text;
+        String rtn = String.format(text, strings);
+        System.out.println(rtn);
+        return rtn;
     }
 
-    public static String interpolate2(String text,Object ... strings) {
-        String format = MessageFormat.format(text, strings);
-        System.out.println(format);
-        return text;
-    }
-
+    //**数组实现**//
     public static String interpolate3(String text, Object... args) {
         LogFormat logFormat = new LogFormat(text);
-        long st = System.currentTimeMillis();
-        //for (int i = 0; i < 10000000; i++) {
-            String rtn = logFormat.format(args);
-        //}
-        System.out.println(rtn);
-        long et = System.currentTimeMillis();
-        System.out.println("char数组执行时间："+ (et - st));
-        return null;
+        String rtn = logFormat.format(args);
+        return rtn;
     }
 
+    //**MessageFormat实现**//
     public static String interpolate4(String text, Object... args) {
-        long st = System.currentTimeMillis();
-        //for (int i = 0; i < 10000000; i++) {
-            String rtn = MessageFormat.format(text, args);
-        //}
-        long et = System.currentTimeMillis();
-        System.out.println("MessaeFormat执行时间："+ (et - st));
-        return null;
-    }
-
-    private static String fillStringByArgs(String str,String[] arr){
-        Matcher m = Pattern.compile("\\{(\\d)\\}").matcher(str);
-        while(m.find()){
-            str=str.replace(m.group(),arr[Integer.parseInt(m.group(1))]);
-        }
-        return str;
+        String rtn = MessageFormat.format(text, args);
+        return rtn;
     }
 
 }
