@@ -5,7 +5,7 @@ package com.sjzc.javaTest;
  */
 public class LogFormat {
 
-    private int INIT_SIZE = 2 << 3;
+    private final int INIT_SIZE = 2 << 3;
 
     private StringBuffer[] texts = new StringBuffer[INIT_SIZE];
 
