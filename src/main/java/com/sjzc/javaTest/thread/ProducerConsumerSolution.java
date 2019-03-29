@@ -1,4 +1,4 @@
-package com.sjzc.javaTest;
+package com.sjzc.javaTest.thread;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
