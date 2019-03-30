@@ -1,4 +1,4 @@
-package com.sjzc.javaTest;
+package com.sjzc.javaTest.designPatterns.chain;
 
 /**
  * 禁止指令重排的单例模式
