@@ -1,4 +1,4 @@
-package com.sjzc.javaTest;
+package com.sjzc.javaTest.utils;
 
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Joiner;

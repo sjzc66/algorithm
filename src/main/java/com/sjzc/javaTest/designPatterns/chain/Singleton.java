@@ -7,6 +7,8 @@ package com.sjzc.javaTest.designPatterns.chain;
  * @Date: Created in 16:24 2019/3/26
  */
 public class Singleton {
+    public static int i = 1;
+
     private static volatile Singleton instance;         //1 volatile
 
     private Singleton() {}          //2  私有构造函数
@@ -20,5 +22,10 @@ public class Singleton {
             }
         }
         return instance;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Singleton.i);;
+        System.out.println("123");
     }
 }
