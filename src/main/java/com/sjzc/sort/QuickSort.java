@@ -81,16 +81,22 @@ public class QuickSort extends SortUtil{
             if (i < j) data[j--] = data[i];
         }
         data[i] = pivotKey;
+        this.print(data);
         quickSort_2(data, start, i - 1);
         quickSort_2(data, i + 1, end);
     }
 
-    public static void main(String[] args) {
-        int[] list = {2, 3, 51, 24,1,22};
-        QuickSort qs = new QuickSort();
-        qs.quickSort_1(list, 0, list.length - 1);
-        for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i]);
+    public void print(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+            System.out.print(data[i] + ",");
         }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] list = {10, 9, 8, 7, 6, 5};
+        QuickSort qs = new QuickSort();
+        qs.quickSort_2(list, 0, list.length - 1);
+        qs.print(list);
     }
 }
