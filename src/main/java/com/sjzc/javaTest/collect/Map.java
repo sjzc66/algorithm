@@ -30,10 +30,36 @@ public class Map {
     //并发队列
     private Deque deque = new ArrayDeque();
 
+    //public static void main(String[] args) {
+    //    List list = new ArrayList(10);
+    //    list.add("1");
+    //    list.add("2");
+    //    System.out.println(list.size());
+    //
+    //    Set set = new HashSet();
+    //    TreeSet treeSet = new TreeSet();
+    //    SortedSet sortedSet = new TreeSet();
+    //    SortedSet<Integer> sortedSet1 = new TreeSet<>();
+    //}
+
+
+    //public static void main(String[] args) {
+    //    List list = Arrays.asList("1", "2", "3", "4");
+    //    List list1 = list.subList(1, 4);
+    //    System.out.println(list1);
+    //}
+
     public static void main(String[] args) {
-        List list = new ArrayList(10);
-        list.add("1");
-        list.add("2");
-        System.out.println(list.size());
+        Integer integer = Integer.valueOf("128");
+        Integer integer2 = Integer.valueOf("128");
+        System.out.println(integer == integer2);
+        System.out.println(Integer.valueOf("256") == Integer.valueOf("256"));
+        System.out.println(Integer.valueOf("128") == Integer.valueOf("128"));
+        System.out.println(Integer.valueOf("256") == Integer.parseInt("256"));
+        System.out.println(Integer.parseInt("128") == Integer.valueOf("128"));
+        System.out.println(Integer.valueOf("128") == new Integer(128));
+        System.out.println(Integer.parseInt("128") == new Integer(128));
+        System.out.println(Integer.parseInt("256") == new Integer(256));
+
     }
 }

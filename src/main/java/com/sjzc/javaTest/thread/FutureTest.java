@@ -60,6 +60,8 @@ public class FutureTest {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newCachedThreadPool();
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(1,2,60L,TimeUnit.SECONDS,new LinkedBlockingQueue<>());
+        ThreadPoolExecutor pool1 = new ThreadPoolExecutor(1,2,60L,TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(10));
         executorService.submit(new Task());
     }
 
