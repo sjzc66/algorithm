@@ -8,7 +8,6 @@ package com.sjzc.sort;
 public class BubboSort {
 
     public int[] sort(int[] arr) {
-        int bubbo = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
                 if (arr[i] < arr[j]) {
