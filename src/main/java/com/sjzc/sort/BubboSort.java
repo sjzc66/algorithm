@@ -2,7 +2,7 @@ package com.sjzc.sort;
 
 /**
  * @author sjzc
- * @Description: XXX
+ * @Description: 冒泡排序算法
  * @Date: Created in 10:29 2019/5/19
  */
 public class BubboSort {
@@ -11,7 +11,7 @@ public class BubboSort {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
                 if (arr[i] < arr[j]) {
-                    swap(arr,i,j);
+                    swap(arr, i, j);
                 }
             }
         }
@@ -31,11 +31,15 @@ public class BubboSort {
         System.out.println();
     }
 
+    //public static void main(String[] args) {
+    //    int[] arr = {2, 3, 1, 5, 10};
+    //    BubboSort bs = new BubboSort();
+    //    bs.print(arr);
+    //    int[] sort = bs.sort(arr);
+    //    bs.print(sort);
+    //}
+
     public static void main(String[] args) {
-        int[] arr = {2, 3, 1, 5, 10};
-        BubboSort bs = new BubboSort();
-        bs.print(arr);
-        int[] sort = bs.sort(arr);
-        bs.print(sort);
+        System.out.println((8 ^ 9 ^ 8 ^ 9));
     }
 }
