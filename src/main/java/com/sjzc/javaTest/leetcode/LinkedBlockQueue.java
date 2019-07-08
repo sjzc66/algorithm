@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author sjzc
- * @Description: XXX
+ * @Description: 手写阻塞队列
  * @Date: Created in 11:19 2019/5/24
  */
 public class LinkedBlockQueue<E> {

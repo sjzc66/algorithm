@@ -1,10 +1,8 @@
 package com.sjzc.javaTest.leetcode;
 
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
-
 /**
  * @author sjzc
- * @Description: XXX
+ * @Description: 小鸟高的面试题
  * @Date: Created in 14:58 2019/6/5
  */
 public class XiaoNianGao {

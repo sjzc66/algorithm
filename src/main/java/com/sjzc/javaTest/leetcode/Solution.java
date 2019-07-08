@@ -2,7 +2,7 @@ package com.sjzc.javaTest.leetcode;
 
 /**
  * @author sjzc
- * @Description: XXX
+ * @Description: 两个数之和
  * @Date: Created in 22:02 2019/4/6
  */
 public class Solution {

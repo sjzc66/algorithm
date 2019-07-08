@@ -1,11 +1,7 @@
 package com.sjzc.javaTest.utils;
 
-import com.google.common.base.CharMatcher;
-import com.google.common.base.Joiner;
-import com.google.common.base.Splitter;
-import com.google.common.primitives.Ints;
-
-import java.util.Iterator;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * @author sjzc
@@ -34,6 +30,20 @@ public class GuavaTest {
         //String numbersAsString = Joiner.on(",").join(Ints.asList(numbers));
         //System.out.println(numbersAsString);
 
-        
+
+        Integer var1 = new Integer(1);
+        Integer var2 = var1;
+        GuavaTest.doSome(var2);
+        System.out.println(var1.intValue());
+        System.out.println(var1 == var2);
+
+        BigDecimal a = new BigDecimal(1.0002).setScale(20, RoundingMode.HALF_UP);
+        System.out.println(a);
+        // BigDecimal b = a.setScale(20);
+        // System.out.println(b);
+    }
+
+    public static void doSome(Integer integer) {
+        integer = new Integer(2);
     }
 }
