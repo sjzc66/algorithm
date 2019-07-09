@@ -5,7 +5,7 @@ package com.sjzc.javaTest.leetcode;
  * @Description 无重复字符的最长子串
  * @create: 2019-07-08 16:46
  **/
-public class Solution2 {
+public class Solution0003 {
 
     public int lengthOfLongestSubstring(String s) {
         String rtn = "";
@@ -25,7 +25,7 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
-        Solution2 s = new Solution2();
+        Solution0003 s = new Solution0003();
         int len = s.lengthOfLongestSubstring("pwwkew");
         System.out.println(len);
     }

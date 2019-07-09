@@ -5,7 +5,7 @@ package com.sjzc.javaTest.leetcode;
  * @Description: 两个数之和
  * @Date: Created in 22:02 2019/4/6
  */
-public class Solution {
+public class Solution0001 {
     /**
      * 给定 nums = [2, 7, 11, 15], target = 9
      *
@@ -45,8 +45,8 @@ public class Solution {
     public static void main(String[] args) {
         int[] nums = {-1,-2,-3,-4,-5};
         int target = -8;
-        Solution solution = new Solution();
-        int[] result = solution.twoSum(nums, target);
+        Solution0001 solution0001 = new Solution0001();
+        int[] result = solution0001.twoSum(nums, target);
         System.out.println(result);
 
 
