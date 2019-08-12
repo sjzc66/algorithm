@@ -33,13 +33,35 @@ public class java {
     //}
 
 
+    //public static void main(String[] args) {
+    //    int i = 0;
+    //    int j = 0;
+    //    System.out.println("-----");
+    //    i = i + 1;
+    //    System.out.println("-----");
+    //    i++;
+    //    System.out.println("-----");
+    //}
+
     public static void main(String[] args) {
-        int i = 0;
-        int j = 0;
-        System.out.println("-----");
-        i = i + 1;
-        System.out.println("-----");
-        i++;
-        System.out.println("-----");
+        boolean s = java.s();
+        System.out.println("-------");
+        System.out.println(s);
+
+    }
+
+    private static boolean s(){
+        try {
+            boolean success = false;
+            if (success == true) {
+                return true;
+            }else {
+                System.out.println("if-else");
+                System.out.println(1/0);
+            }
+        } catch (Exception e) {
+            System.out.println("Exception");
+        }
+        return false;
     }
 }

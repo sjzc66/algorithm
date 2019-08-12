@@ -1,5 +1,8 @@
 package com.sjzc.functionCode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author sjzc
  * @Description: XXX
@@ -40,5 +43,22 @@ public class Student {
 
     public void print() {
         System.out.println(this.toString());
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student("1", (byte) 1);
+        Student s2 = new Student("2", (byte) 2);
+        Student s3 = new Student("3", (byte) 3);
+        List<Student> list = new ArrayList<>();
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+
+        list.forEach(s -> {
+            s.setName("4");
+            s.setSex((byte)0);
+        });
+        System.out.println("");
+
     }
 }
