@@ -17,16 +17,32 @@ public class RandomUtil {
     private static List<Range> lst = new ArrayList<>();
 
     static {
-        lst.add(new Range(1, 0.05));
-        lst.add(new Range(2, 0.1));
-        lst.add(new Range(3, 0.75));
-        lst.add(new Range(5, 0.1));
-        lst.add(new Range(10, 0.0));
-        lst.add(new Range(20, 0.0));
-        lst.add(new Range(88, 0.0));
+        lst.add(new Range(1, 5,-1));
+        lst.add(new Range(2, 10,-1));
+        lst.add(new Range(3, 75,-1));
+        lst.add(new Range(5, 10,-1));
+        lst.add(new Range(10, 0,-1));
+        lst.add(new Range(20, 0,-1));
+        lst.add(new Range(88, 100, 10));
+        refresh();
     }
 
-    private static Integer generate() throws Exception {
+    private static Double generate() {
+        Random random = new Random();
+        double v = random.nextDouble();
+        List<Range> collect = lst.stream().filter(s -> s.getRatio() > v).collect(Collectors.toList());
+        Range range = collect.get(0);
+        if (range.getMax_count() > 0) {
+            range.setMax_count(range.getMax_count() - 1);
+            if (range.getMax_count() == 0) {
+                range.setWeight(0);
+                refresh();
+            }
+        }
+        return range.getValue();
+    }
+
+    private static void refresh() {
         Double total = lst.stream().collect(Collectors.summingDouble(Range::getWeight));
         lst.forEach(s -> s.setRatio(s.getWeight() / total));
         Double current = 0.0;
@@ -34,10 +50,6 @@ public class RandomUtil {
             current += lst.get(i).getRatio();
             lst.get(i).setRatio(current);
         }
-        Random random = new Random();
-        double v = random.nextDouble();
-        List<Range> collect = lst.stream().filter(s -> s.getRatio() > v).collect(Collectors.toList());
-        return collect.get(0).getValue();
     }
 
 
@@ -47,21 +59,26 @@ public class RandomUtil {
         int count3 = 0;
         int count5 = 0;
         int count10 = 0;
-        for (int i = 0; i < 1000000; i++) {
-            if (1 == RandomUtil.generate()) {
+        int count88 = 0;
+        for (int i = 0; i < 10000; i++) {
+            Double value = RandomUtil.generate();
+            if (1 == value) {
                 count1++;
             }
-            if (2 == RandomUtil.generate()) {
+            if (2 == value) {
                 count2++;
             }
-            if (3 == RandomUtil.generate()) {
+            if (3 == value) {
                 count3++;
             }
-            if (5 == RandomUtil.generate()) {
+            if (5 == value) {
                 count5++;
             }
-            if (10 == RandomUtil.generate()) {
+            if (10 == value) {
                 count10++;
+            }
+            if (88 == value) {
+                count88++;
             }
         }
         System.out.println(count1);
@@ -69,17 +86,25 @@ public class RandomUtil {
         System.out.println(count3);
         System.out.println(count5);
         System.out.println(count10);
+        System.out.println(count88);
     }
 }
 
 @Data
 class Range {
-    private int value;
-    private double weight;
+    private double value;
+    private int weight;
+    private int max_count;
     private double ratio;
 
-    public Range(int value, double weight) {
+    public Range(double value, int weight) {
         this.value = value;
         this.weight = weight;
+    }
+
+    public Range(double value, int weight, int max_count) {
+        this.value = value;
+        this.weight = weight;
+        this.max_count = max_count;
     }
 }

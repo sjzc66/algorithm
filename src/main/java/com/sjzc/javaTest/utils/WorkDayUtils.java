@@ -17,13 +17,12 @@ public class WorkDayUtils {
      */
     private static final Map<Integer, Boolean> MAP = new HashMap();
     private static final List WORK_LIST = Arrays.asList(DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, DayOfWeek.THURSDAY, DayOfWeek.FRIDAY);
-    private static final List HOLIDAY_LIST = Arrays.asList(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY);
 
     static {
-        init();
+        initData();
     }
 
-    private static void init() {
+    private static void initData() {
         // ---------------2017------------------
         MAP.put(20170102, false);
         MAP.put(20170122, true);
@@ -147,6 +146,11 @@ public class WorkDayUtils {
         }
     }
 
+    /**
+     * 获取下一个工作日
+     * @param date
+     * @return
+     */
     public static Date nextWorkDay(Date date) {
         date = WorkDayUtils.plusDays(date, 1L);
         if (isWorkDay(date)) {
@@ -156,29 +160,16 @@ public class WorkDayUtils {
         }
     }
 
+    /**
+     * 获取n个工作日后日期
+     * @param date
+     * @param n
+     * @return
+     */
     public static Date nextWorkDay(Date date,int n) {
         for (int i = 0; i < n; i++) {
             date = nextWorkDay(date);
         }
         return date;
     }
-
-    public static void main(String[] args) {
-        Date date = new Date(Date.parse("9/10/2019"));
-        for (int i = 0; i < 20; i++) {
-            date = WorkDayUtils.nextWorkDay(date);
-            String dateStr = WorkDayUtils.dateFormat(date, "yyyy-MM-dd");
-            System.out.println(dateStr + ":" + dateStr);
-        }
-
-        //Date date = new Date(Date.parse("5/1/2019"));
-        //for (int i = 0; i < 10; i++) {
-        //    String dateStr = WorkDayUtils.dateFormat(date, "yyyy-MM-dd");
-        //    boolean workDay = WorkDayUtils.isWorkDay(date);
-        //    System.out.println(dateStr + ":" + workDay);
-        //    date = WorkDayUtils.plusDays(date,1L);
-        //    System.out.println();
-        //}
-    }
-
 }
