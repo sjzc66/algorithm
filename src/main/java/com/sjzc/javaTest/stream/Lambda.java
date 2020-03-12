@@ -47,6 +47,5 @@ public class Lambda {
         }));
 
         System.out.println(collect);
-
     }
 }

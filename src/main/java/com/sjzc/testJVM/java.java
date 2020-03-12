@@ -1,5 +1,9 @@
 package com.sjzc.testJVM;
 
+import java.util.Queue;
+import java.util.Stack;
+import java.util.concurrent.LinkedBlockingQueue;
+
 /**
  * @author sjzc
  * @Description: XXX
@@ -47,6 +51,15 @@ public class java {
         boolean s = java.s();
         System.out.println("-------");
         System.out.println(s);
+
+        Stack stack = new Stack();
+        stack.peek();
+        stack.pop();
+        stack.push("1");
+
+        Queue queue = new LinkedBlockingQueue();
+        queue.add(1);
+
 
     }
 
