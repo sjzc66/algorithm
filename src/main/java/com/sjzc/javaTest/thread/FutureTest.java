@@ -60,8 +60,41 @@ public class FutureTest {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newCachedThreadPool();
-        ThreadPoolExecutor pool = new ThreadPoolExecutor(1,2,60L,TimeUnit.SECONDS,new LinkedBlockingQueue<>());
-        ThreadPoolExecutor pool1 = new ThreadPoolExecutor(1,2,60L,TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(10));
+        ExecutorService pool = new ThreadPoolExecutor(1,2,60L,TimeUnit.SECONDS,new LinkedBlockingQueue<>());
+        ExecutorService pool1 = new ThreadPoolExecutor(1, 2, 60L, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(10));
+        ExecutorService pool2 = new ScheduledThreadPoolExecutor(1);
+
+        Future<?> submit = executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(111);
+            }
+        });
+        Future<String> submit1 = executorService.submit(new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                System.out.println(Thread.currentThread().getName());
+                Thread.sleep(3000);
+                return "success";
+            }
+        });
+
+        try {
+            Object o = submit.get();
+            System.out.println("等待消息");
+            System.out.println(Thread.currentThread().getName());
+            System.out.println(submit1.isDone());
+            System.out.println(submit1.isCancelled());
+            Object o1 = submit1.get();
+            System.out.println(Thread.currentThread().getName() + o1);
+            System.out.println(submit1.isDone());
+            System.out.println(submit1.isCancelled());
+            System.out.println("收到消息");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
         executorService.submit(new Task());
     }
 
