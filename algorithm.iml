@@ -24,5 +24,29 @@
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.1.43" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.4" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:dubbo:2.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring:2.5.6.SEC03" level="project" />
+    <orderEntry type="library" name="Maven: org.javassist:javassist:3.15.0-GA" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.netty:netty:3.2.5.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.redisson:redisson:2.2.13" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.0.36.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.0.36.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.0.36.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.0.36.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.0.36.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.projectreactor:reactor-stream:2.0.7.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:2.0.7.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.14" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.6.5" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.15" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.5" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.5" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.0" level="project" />
+    <orderEntry type="library" name="Maven: net.openhft:zero-allocation-hashing:0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.rocketmq:rocketmq-client:4.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.rocketmq:rocketmq-common:4.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.rocketmq:rocketmq-remoting:4.2.0" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-all:4.0.42.Final" level="project" />
   </component>
 </module>

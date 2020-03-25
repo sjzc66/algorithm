@@ -1,5 +1,8 @@
 package com.sjzc.javaTest.thread;
 
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.LongAdder;
+
 /**
  * @author sjzc
  * @Description: XXX
@@ -16,7 +19,15 @@ public class jvmTest {
     //}
 
     public static void main(String[] args) {
-        char a = 1;
-        System.out.println(a&a);
+        LongAdder longAdder = new LongAdder();
+        for (int i = 0; i < 1000; i++) {
+            longAdder.add(1);
+        }
+        System.out.println(longAdder);
+        AtomicLong atomicLong = new AtomicLong(0);
+        for (int i = 0; i < 1000; i++) {
+            atomicLong.incrementAndGet();
+        }
+        System.out.println(atomicLong);
     }
 }
