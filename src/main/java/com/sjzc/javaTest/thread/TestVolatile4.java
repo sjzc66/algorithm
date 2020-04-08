@@ -15,7 +15,7 @@ public class TestVolatile4 {
     public static void main(String[] args) throws InterruptedException {
         new Thread(() -> {
             while (a == 0) {
-                // long x = b;
+                long x = b;
             }
             System.out.println("a=" + a);
         }).start();

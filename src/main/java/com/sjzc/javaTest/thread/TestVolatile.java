@@ -15,28 +15,36 @@ public class TestVolatile {
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < 100000000; i++) {
                 point.x++;
+                // point.y++;
+                // if (point.x == 500000000) {
+                //     System.out.println(point.y);
+                // }
             }
         });
         Thread t2 = new Thread(() -> {
             for (int i = 0; i < 100000000; i++) {
-                point.x++;
+                point.y++;
+                // point.x++;
+                // if (point.y == 500000000) {
+                //     System.out.println(point.x);
+                // }
             }
         });
+        // System.out.println(System.nanoTime());
+        // System.out.println(System.currentTimeMillis());
         t1.start();
         t2.start();
         t1.join();
-        // t2.join();
-        System.out.println(System.currentTimeMillis() - start);
-        System.out.println(point.x);
-        System.out.println(point.y);
         t2.join();
-        System.out.println(point.x);
+        // System.out.println(point.x);
+        // System.out.println(point.y);
+        System.out.println(System.currentTimeMillis() - start);
     }
 
 }
 
 class Point {
-     volatile long x;
+    volatile long x;
     // long p1, p2, p3, p4, p5, p6, p7;
-     volatile long y;
+    volatile long y;
 }
