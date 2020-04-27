@@ -27,6 +27,13 @@
         <!--<version>2.12.8</version>-->
         <!--</dependency>-->
 
+        <!-- https://mvnrepository.com/artifact/org.openjdk.jol/jol-core -->
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.10</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -81,6 +88,12 @@
             <version>4.2.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/classmexer/classmexer -->
+        <dependency>
+            <groupId>classmexer</groupId>
+            <artifactId>classmexer</artifactId>
+            <version>0.03</version>
+        </dependency>
 
 
     </dependencies>

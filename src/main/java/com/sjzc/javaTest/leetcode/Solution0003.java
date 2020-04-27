@@ -3,6 +3,7 @@ package com.sjzc.javaTest.leetcode;
 /**
  * @author zhaochong
  * @Description 无重复字符的最长子串
+ *               最长不含重复字符的子字符串
  * @create: 2019-07-08 16:46
  **/
 public class Solution0003 {

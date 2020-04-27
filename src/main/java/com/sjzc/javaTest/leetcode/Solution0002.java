@@ -100,4 +100,23 @@ class ListNode {
     ListNode(int x) {
         val = x;
     }
+
+    public ListNode getNext() {
+        return next;
+    }
+
+    public ListNode setNext(ListNode next) {
+        this.next = next;
+        return this;
+    }
+
+    public void print() {
+        ListNode index = this;
+        while (index.next != null) {
+            System.out.print(index.val + "->");
+            index = index.next;
+        }
+        System.out.print(index.val);
+        System.out.println();
+    }
 }
