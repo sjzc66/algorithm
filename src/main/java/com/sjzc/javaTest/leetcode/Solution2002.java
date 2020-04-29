@@ -3,6 +3,7 @@ package com.sjzc.javaTest.leetcode;
 /**
  * @author zhaochong
  * @Description 面试题10- II. 青蛙跳台阶问题
+ *              Solution0070 相同
  * @create: 2020-04-26 20:13
  **/
 public class Solution2002 {
