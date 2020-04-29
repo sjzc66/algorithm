@@ -2,7 +2,7 @@ package com.sjzc.javaTest.leetcode;
 
 /**
  * @author zhaochong
- * @Description 扑克牌中的顺子
+ * @Description 找山脉的值
  * <p>
  * Solution0509
  * @create: 2020-04-26 20:13
