@@ -1,5 +1,7 @@
 package com.sjzc.sort;
 
+import java.util.Arrays;
+
 /**
  * @author sjzc
  * @Description: 直接插入排序
@@ -30,5 +32,12 @@ public class InsertSort extends SortUtil{
             }
             array[j + 1] = tmp;
         }
+    }
+
+    public static void main(String[] args) {
+        Integer[] nums = {1, 3, 2, 5, 6, 3, 6, 2, 8, 6, 9};
+        System.out.println(Arrays.toString(nums));
+        SortUtil.insertSort.execute(nums);
+        System.out.println(Arrays.toString(nums));;
     }
 }

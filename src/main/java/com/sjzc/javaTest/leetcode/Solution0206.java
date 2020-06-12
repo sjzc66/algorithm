@@ -18,9 +18,9 @@ public class Solution0206 {
         ListNode temp = new ListNode(0);
         headPointer.next = head;
         anotherPointer.next = head.next;
-        if (headPointer.next.next != null) {
-            headPointer.next.next = null;
-        }
+        // if (headPointer.next.next != null) {
+        headPointer.next.next = null;
+        // }
         if (anotherPointer.next == null) {
             return headPointer.next;
         }
@@ -31,6 +31,27 @@ public class Solution0206 {
             headPointer.next = temp.next;
         }
         return headPointer.next;
+    }
+
+    public ListNode reverseList2(ListNode node) {
+        ListNode head = null;
+        ListNode current = node;
+        ListNode temp = null;
+        while (current != null) {
+            temp = current.next;
+            current.next = head;
+            head = current;
+            current = temp;
+        }
+        return head;
+    }
+
+    public ListNode reverseList3(ListNode node) {
+        if (node == null || node.next == null) return node;
+        ListNode another = reverseList3(node.next);
+        node.next.next = node;
+        node.next = null;
+        return another;
     }
 
 
@@ -64,9 +85,8 @@ public class Solution0206 {
         node4.next = node5;
         node1.print();
         Solution0206 solution0206 = new Solution0206();
-        ListNode node = solution0206.reverseList(node1);
+        ListNode node = solution0206.reverseList3(node1);
         node.print();
     }
 }
-
 

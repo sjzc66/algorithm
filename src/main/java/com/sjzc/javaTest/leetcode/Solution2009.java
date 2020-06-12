@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @author zhaochong
- * @Description 反转链表
+ * @Description 用两个栈实现队列
  * <p>
  * Solution0509
  * @create: 2020-04-26 20:13

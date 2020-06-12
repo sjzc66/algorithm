@@ -18,10 +18,7 @@ package com.sjzc.javaTest.leetcode;
  * 说明:
  *
  * 假设你总是可以到达数组的最后一个位置。
- *
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/jump-game-ii
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ *  ☆贪心算法
  * @create: 2020-04-26 20:13
  **/
 public class Solution0045 {
