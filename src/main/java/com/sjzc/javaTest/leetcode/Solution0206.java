@@ -46,6 +46,20 @@ public class Solution0206 {
         return head;
     }
 
+    public ListNode reverseList22(ListNode head) {
+        ListNode pre = null;
+        ListNode next = null;
+        while (head != null) {
+            next = head.next;
+
+            head.next = pre;
+            pre = head;
+
+            head = next;
+        }
+        return pre;
+    }
+
     public ListNode reverseList3(ListNode node) {
         if (node == null || node.next == null) return node;
         ListNode another = reverseList3(node.next);
@@ -85,7 +99,7 @@ public class Solution0206 {
         node4.next = node5;
         node1.print();
         Solution0206 solution0206 = new Solution0206();
-        ListNode node = solution0206.reverseList3(node1);
+        ListNode node = solution0206.reverseList22(node1);
         node.print();
     }
 }

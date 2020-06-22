@@ -40,6 +40,18 @@ public class BubboSort {
     //}
 
     public static void main(String[] args) {
-        System.out.println((8 ^ 9 ^ 8 ^ 9));
+        // System.out.println((8 ^ 9 ^ 8 ^ 9));
+
+
+        int x =12312;
+        int y =12312;
+        System.out.println(x + ";" + y);
+        x=x^y;
+        y=x^y;
+        x=x^y;
+        System.out.println(x + ";" + y);
+
+
+        System.out.println(Math.pow(10 , 3));
     }
 }

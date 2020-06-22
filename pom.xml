@@ -21,6 +21,13 @@
     </build>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.7.1</version>
+        </dependency>
+
         <!--<dependency>-->
         <!--<groupId>org.scala-lang</groupId>-->
         <!--<artifactId>scala-library</artifactId>-->
@@ -89,11 +96,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/classmexer/classmexer -->
-        <dependency>
-            <groupId>classmexer</groupId>
-            <artifactId>classmexer</artifactId>
-            <version>0.03</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>classmexer</groupId>-->
+<!--            <artifactId>classmexer</artifactId>-->
+<!--            <version>0.03</version>-->
+<!--        </dependency>-->
 
 
     </dependencies>
