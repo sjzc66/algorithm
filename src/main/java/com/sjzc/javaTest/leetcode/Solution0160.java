@@ -16,10 +16,7 @@ public class Solution0160 {
         if (headA == null || headB == null) {
             return null;
         }
-        while (true) {
-            if (pA == pB) {
-                break;
-            }
+        while (pA != pB) {
             if (pA != pB) {
                 pA = pA.next;
                 pB = pB.next;
