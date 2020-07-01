@@ -1,5 +1,12 @@
 package com.sjzc.javaTest.leetcode;
 
+import lombok.val;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * @author zhaochong
  * @Description 合并两个链表
@@ -42,6 +49,8 @@ public class Solution0024 {
         Solution0024 solution0021 = new Solution0024();
         ListNode listNode = solution0021.swapPairs(l1);
         listNode.print();
+
+        LinkedList list = new LinkedList();
     }
 
     static class ListNode {

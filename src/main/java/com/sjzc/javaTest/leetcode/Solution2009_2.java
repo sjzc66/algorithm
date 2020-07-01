@@ -14,11 +14,11 @@ public class Solution2009_2 {
     static class CQueue {
 
         Stack<Integer> push;
-        Stack<Integer> pop;
+        Stack<Integer> help;
 
         public CQueue() {
             push = new Stack();
-            pop = new Stack();
+            help = new Stack();
         }
 
         public void appendTail(int value) {
@@ -27,18 +27,18 @@ public class Solution2009_2 {
         }
 
         public int deleteHead() throws Exception {
-            if (push.isEmpty() && pop.isEmpty()) {
+            if (push.isEmpty() && help.isEmpty()) {
                 // throw new Exception("is Empty");
                 return -1;
             }
             pushToPop();
-            return pop.pop();
+            return help.pop();
         }
 
         private void pushToPop() {
-            if (pop.isEmpty()) {
+            if (help.isEmpty()) {
                 while (!push.isEmpty()) {
-                    pop.push(push.pop());
+                    help.push(push.pop());
                 }
             }
         }
