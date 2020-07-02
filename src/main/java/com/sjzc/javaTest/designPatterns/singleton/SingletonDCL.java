@@ -1,4 +1,4 @@
-package com.sjzc.design;
+package com.sjzc.javaTest.designPatterns.singleton;
 
 /**
  * @author zhaochong

@@ -1,8 +1,5 @@
 package com.sjzc.algorithm.basic;
 
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * @author zhaochong
  * @Description 二进制求和
