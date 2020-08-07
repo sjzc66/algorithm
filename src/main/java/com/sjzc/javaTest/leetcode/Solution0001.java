@@ -43,12 +43,15 @@ public class Solution0001 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {-1,-2,-3,-4,-5};
-        int target = -8;
-        Solution0001 solution0001 = new Solution0001();
-        int[] result = solution0001.twoSum(nums, target);
-        System.out.println(result);
+        // int[] nums = {-1,-2,-3,-4,-5};
+        // int target = -8;
+        // Solution0001 solution0001 = new Solution0001();
+        // int[] result = solution0001.twoSum(nums, target);
+        // System.out.println(result);
 
+        String a = "aaabbbccc";
+        a.replace("a", "b");
+        System.out.println(a);
 
     }
 }
