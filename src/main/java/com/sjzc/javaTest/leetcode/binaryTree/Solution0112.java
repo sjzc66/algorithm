@@ -2,7 +2,7 @@ package com.sjzc.javaTest.leetcode.binaryTree;
 
 /**
  * @author sjzc
- * @Description: 二叉树的平衡
+ * @Description: 路径总和
  * @Date: Created in 22:02 2019/4/6
  */
 public class Solution0112 {
