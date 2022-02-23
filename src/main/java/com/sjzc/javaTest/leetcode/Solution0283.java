@@ -50,7 +50,5 @@ public class Solution0283 {
         Solution0283 solution0001 = new Solution0283();
         solution0001.moveZeroes(nums);
         System.out.println(Arrays.toString(nums));
-
-
     }
 }
