@@ -1,5 +1,8 @@
 package com.sjzc.javaTest.utils;
 
+import com.google.common.base.Joiner;
+import com.google.common.primitives.Ints;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -26,9 +29,9 @@ public class GuavaTest {
         //}
 
         //3、Joiner
-        //int[] numbers = { 1, 2, 3, 4, 5 };
-        //String numbersAsString = Joiner.on(",").join(Ints.asList(numbers));
-        //System.out.println(numbersAsString);
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        String numbersAsString = Joiner.on(",").join(Ints.asList(numbers));
+        System.out.println(numbersAsString);
 
 
         Integer var1 = new Integer(1);
