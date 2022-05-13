@@ -31,10 +31,36 @@ public class Solution0509 {
         return result;
     }
 
+
+    public int fib1(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        int ans = 0;
+        int l = 0;
+        int r = 1;
+        for (int i = 1; i < n; i++) {
+            ans = l + r;
+            l = r;
+            r = ans;
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         Solution0509 solution0509 = new Solution0509();
-        int fib = solution0509.fib(50);
-        System.out.println(fib);
+        // int fib = solution0509.fib(50);
+        // System.out.println(fib);
+        System.out.println(solution0509.fib1(0));
+        System.out.println(solution0509.fib1(1));
+        System.out.println(solution0509.fib1(2));
+        System.out.println(solution0509.fib1(3));
+        System.out.println(solution0509.fib1(4));
+        System.out.println(solution0509.fib1(5));
+        System.out.println(solution0509.fib1(6));
     }
 }
 
