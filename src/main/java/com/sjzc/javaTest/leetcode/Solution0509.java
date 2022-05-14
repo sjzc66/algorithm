@@ -1,5 +1,7 @@
 package com.sjzc.javaTest.leetcode;
 
+import java.util.Arrays;
+
 /**
  * @author zhaochong
  * @Description 斐波那契数列
@@ -50,6 +52,23 @@ public class Solution0509 {
         return ans;
     }
 
+    public int fib2(int n) {
+        int[] dp = new int[n + 2];
+        Arrays.fill(dp, -1);
+        dp[0] = 0;
+        dp[1] = 1;
+        int ans = process(n, dp);
+        return ans;
+    }
+
+    private int process(int n, int[] dp) {
+        if (dp[n] != -1) {
+            return dp[n];
+        }
+        int result = process(n - 1, dp) + process(n - 2, dp);
+        return result;
+    }
+
     public static void main(String[] args) {
         Solution0509 solution0509 = new Solution0509();
         // int fib = solution0509.fib(50);
@@ -61,6 +80,14 @@ public class Solution0509 {
         System.out.println(solution0509.fib1(4));
         System.out.println(solution0509.fib1(5));
         System.out.println(solution0509.fib1(6));
+        System.out.println("--------");
+        System.out.println(solution0509.fib2(0));
+        System.out.println(solution0509.fib2(1));
+        System.out.println(solution0509.fib2(2));
+        System.out.println(solution0509.fib2(3));
+        System.out.println(solution0509.fib2(4));
+        System.out.println(solution0509.fib2(5));
+        System.out.println(solution0509.fib2(6));
     }
 }
 
