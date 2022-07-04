@@ -54,9 +54,3 @@ public class Solution0023 {
         result.print();
     }
 }
-
-// class ListNode {
-//     int val;
-//     ListNode next;
-//     ListNode(int x) { val = x; }
-// }
