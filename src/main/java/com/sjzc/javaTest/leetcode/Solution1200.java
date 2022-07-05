@@ -30,6 +30,7 @@ public class Solution1200 {
         Arrays.sort(indexArr);
         Arrays.sort(tempArr);
 
+//        dddd
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < tempArr.length - 1; i++) {
             tempArr[i] = tempArr[i + 1] - tempArr[i];
