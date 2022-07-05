@@ -24,7 +24,7 @@ public class Solution1200 {
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
         // 4 2 1 3  arr
         // 1 2 3 4  indexArr
-        // 1 1 1 -  temp
+        // 1 1 1 +  temp
         int[] indexArr = arr.clone();
         int[] tempArr = arr.clone();
         Arrays.sort(indexArr);
